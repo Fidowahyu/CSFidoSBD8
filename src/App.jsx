@@ -1,10 +1,6 @@
 // Twitch Landing Page (React + Vite + Tailwind CSS)
 
 import React from "react";
-import Logo from "/TwitchDark.png"; // Benar
-import HeroLogo from "/LogoTwitch.png"; // Benar
-import TwitchTextLogo from "/twitchlogotulisan.png"; // Benar
-import SearchIcon from "/Logo Search.png"; // Gunakan jalur relatif dari folder public
 
 export default function App() {
   const scrollToSignUp = () => {
@@ -19,7 +15,7 @@ export default function App() {
       {/* Navbar */}
       <nav className="bg-purple-900 text-white px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <img src={Logo} alt="Twitch Logo" className="w-8 h-8" />
+          <img src="/TwitchDark.png" alt="Twitch Logo" className="w-8 h-8" />
           <div className="text-2xl font-bold">Twitch</div>
         </div>
         <div className="space-x-4">
@@ -36,10 +32,9 @@ export default function App() {
       {/* Hero Section */}
       <section className="bg-purple-800 text-white min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-2xl">
-          <img src={TwitchTextLogo} alt="Twitch Text Logo" className="mx-auto mb-6 w-64" />
+          <img src="/twitchlogotulisan.png" alt="Twitch Text Logo" className="mx-auto mb-6 w-64" />
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Streaming Jadi Lebih Seru Bersama Twitch!</h1>
           <p className="mb-6 text-lg">Gabung bersama jutaan kreator dan penonton yang bikin dunia hiburan makin hidup.</p>
-          {/* Tambahkan fungsi scroll ke tombol */}
           <button
             className="bg-white text-purple-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition"
             onClick={scrollToSignUp}
@@ -51,9 +46,11 @@ export default function App() {
 
       {/* Tentang Twitch */}
       <section className="py-16 px-6 bg-white text-center">
-        <img src={Logo} alt="Twitch Logo" className="mx-auto mb-6 w-32 h-32" />
+        <img src="/TwitchDark.png" alt="Twitch Logo" className="mx-auto mb-6 w-32 h-32" />
         <h2 className="text-3xl font-bold mb-4">Tentang Twitch</h2>
-        <p className="max-w-2xl mx-auto text-lg">Twitch adalah platform live streaming terpopuler di dunia. Fokus pada konten gaming, musik, IRL, dan banyak lagi. Misi kami adalah menghubungkan orang melalui hiburan langsung.</p>
+        <p className="max-w-2xl mx-auto text-lg">
+          Twitch adalah platform live streaming terpopuler di dunia. Fokus pada konten gaming, musik, IRL, dan banyak lagi. Misi kami adalah menghubungkan orang melalui hiburan langsung.
+        </p>
       </section>
 
       {/* Fitur Unggulan */}
@@ -79,7 +76,9 @@ export default function App() {
       <section id="sign-up-section" className="py-16 px-6 bg-purple-700 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Gabung Sekarang dan Mulai Siaranmu!</h2>
         <p className="mb-6">Twitch selalu terbuka untuk kreator baru dan penonton setia.</p>
-        <button className="bg-white text-purple-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">Daftar Gratis</button>
+        <button className="bg-white text-purple-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+          Daftar Gratis
+        </button>
       </section>
 
       {/* Footer */}
