@@ -1,5 +1,9 @@
 import React from "react";
 
+// Image imports
+import TwitchDark from "../public/twitchDark.png";
+import TwitchTextLogo from "../public/twitchlogotulisan.png";
+
 export default function App() {
   const scrollToSignUp = () => {
     const signUpSection = document.getElementById("sign-up-section");
@@ -13,7 +17,7 @@ export default function App() {
       {/* Navbar */}
       <nav className="bg-purple-900 text-white px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <img src="/TwitchDark.png" alt="Twitch Logo" className="w-8 h-8" />
+          <img src={TwitchDark} alt="Twitch Logo" className="w-8 h-8" />
           <div className="text-2xl font-bold">Twitch</div>
         </div>
         <div className="space-x-4">
@@ -30,7 +34,7 @@ export default function App() {
       {/* Hero Section */}
       <section className="bg-purple-800 text-white min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-2xl">
-          <img src="/twitchlogotulisan.png" alt="Twitch Text Logo" className="mx-auto mb-6 w-64" />
+          <img src={TwitchTextLogo} alt="Twitch Text Logo" className="mx-auto mb-6 w-64" />
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Streaming Jadi Lebih Seru Bersama Twitch!</h1>
           <p className="mb-6 text-lg">Gabung bersama jutaan kreator dan penonton yang bikin dunia hiburan makin hidup.</p>
           <button
@@ -44,7 +48,7 @@ export default function App() {
 
       {/* Tentang Twitch */}
       <section className="py-16 px-6 bg-white text-center">
-        <img src="/TwitchDark.png" alt="Twitch Logo" className="mx-auto mb-6 w-32 h-32" />
+        <img src={TwitchDark} alt="Twitch Logo" className="mx-auto mb-6 w-32 h-32" />
         <h2 className="text-3xl font-bold mb-4">Tentang Twitch</h2>
         <p className="max-w-2xl mx-auto text-lg">
           Twitch adalah platform live streaming terpopuler di dunia. Fokus pada konten gaming, musik, IRL, dan banyak lagi. Misi kami adalah menghubungkan orang melalui hiburan langsung.
