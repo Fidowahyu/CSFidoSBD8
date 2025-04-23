@@ -1,5 +1,3 @@
-// Twitch Landing Page (React + Vite + Tailwind CSS)
-
 import React from "react";
 
 export default function App() {
