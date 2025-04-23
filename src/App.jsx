@@ -1,9 +1,9 @@
 // Twitch Landing Page (React + Vite + Tailwind CSS)
 
 import React from "react";
-import Logo from "/TwitchDark.png"; // Logo untuk navbar
-import HeroLogo from "../public/LogoTwitch.png"; // Logo untuk Hero Section
-import TwitchTextLogo from "../public/twitchlogotulisan.png"; // Logo tulisan Twitch
+import Logo from "/TwitchDark.png"; // Benar
+import HeroLogo from "/LogoTwitch.png"; // Benar
+import TwitchTextLogo from "/twitchlogotulisan.png"; // Benar
 import SearchIcon from "/Logo Search.png"; // Gunakan jalur relatif dari folder public
 
 export default function App() {
