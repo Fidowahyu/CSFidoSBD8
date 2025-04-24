@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-// Image imports
 import TwitchDark from "../public/twitchDark.png";
 import TwitchTextLogo from "../public/twitchlogotulisan.png";
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   const scrollToSignUp = () => {
     const signUpSection = document.getElementById("sign-up-section");
     if (signUpSection) {
@@ -13,11 +18,18 @@ export default function App() {
   };
 
   return (
-    <div className="font-sans text-gray-800">
+    <div
+      className={`${darkMode ? "dark brightness-75" : ""} font-sans text-gray-800 transition duration-300`}
+    >
       {/* Navbar */}
       <nav className="bg-purple-900 text-white px-6 py-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <img src={TwitchDark} alt="Twitch Logo" className="w-8 h-8" />
+          <img
+            src={TwitchDark}
+            alt="Twitch Logo"
+            className="w-8 h-8 cursor-pointer"
+            onClick={scrollToSignUp}
+          />
           <div className="text-2xl font-bold">Twitch</div>
         </div>
         <div className="space-x-4">
@@ -27,6 +39,12 @@ export default function App() {
             onClick={scrollToSignUp}
           >
             Sign Up
+          </button>
+          <button
+            className="bg-gray-800 text-white font-semibold px-4 py-1 rounded-full hover:bg-gray-700 transition"
+            onClick={toggleDarkMode}
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </div>
       </nav>
@@ -47,7 +65,7 @@ export default function App() {
       </section>
 
       {/* Tentang Twitch */}
-      <section className="py-16 px-6 bg-white text-center">
+      <section className="py-16 px-6 bg-white text-center dark:bg-gray-800 dark:text-white">
         <img src={TwitchDark} alt="Twitch Logo" className="mx-auto mb-6 w-32 h-32" />
         <h2 className="text-3xl font-bold mb-4">Tentang Twitch</h2>
         <p className="max-w-2xl mx-auto text-lg">
@@ -56,35 +74,52 @@ export default function App() {
       </section>
 
       {/* Fitur Unggulan */}
-      <section className="py-16 px-6 bg-gray-100">
+      <section className="py-16 px-6 bg-gray-100 dark:bg-gray-900 dark:text-white">
         <h2 className="text-3xl font-bold text-center mb-10">Fitur Unggulan</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center transform transition duration-500 hover:scale-105">
             <h3 className="text-xl font-semibold mb-2">Live Chat Interaktif</h3>
             <p>Penonton bisa langsung berinteraksi dengan kreator secara real-time.</p>
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center transform transition duration-500 hover:scale-105">
             <h3 className="text-xl font-semibold mb-2">Monetisasi Kreator</h3>
             <p>Kreator bisa menghasilkan uang dari iklan, donasi, dan langganan.</p>
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow text-center">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center transform transition duration-500 hover:scale-105">
             <h3 className="text-xl font-semibold mb-2">Streaming Gaming & IRL</h3>
             <p>Nikmati konten game, daily vlog, musik, dan acara spesial lainnya.</p>
+          </div>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center transform transition duration-500 hover:scale-105">
+            <h3 className="text-xl font-semibold mb-2">Mode Gelap</h3>
+            <p>Pengalaman menonton lebih nyaman dengan mode gelap yang ramah mata.</p>
+          </div>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center transform transition duration-500 hover:scale-105">
+            <h3 className="text-xl font-semibold mb-2">Notifikasi Real-Time</h3>
+            <p>Dapatkan notifikasi langsung saat kreator favorit Anda mulai streaming.</p>
+          </div>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center transform transition duration-500 hover:scale-105">
+            <h3 className="text-xl font-semibold mb-2">Komunitas Global</h3>
+            <p>Bergabung dengan komunitas global yang berbagi minat yang sama.</p>
           </div>
         </div>
       </section>
 
       {/* Section Daftar Gratis */}
-      <section id="sign-up-section" className="py-16 px-6 bg-purple-700 text-white text-center">
+      <section id="sign-up-section" className="py-16 px-6 bg-purple-700 text-white text-center dark:bg-purple-900">
         <h2 className="text-3xl font-bold mb-4">Gabung Sekarang dan Mulai Siaranmu!</h2>
         <p className="mb-6">Twitch selalu terbuka untuk kreator baru dan penonton setia.</p>
-        <button className="bg-white text-purple-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+        <a
+          href="https://www.twitch.tv/sign-up/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-purple-800 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition transform hover:scale-110"
+        >
           Daftar Gratis
-        </button>
+        </a>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-10 px-6 text-center">
+      <footer className="bg-gray-900 text-white py-10 px-6 text-center dark:bg-black">
         <div className="mb-4">Follow kami di @Twitch | Support: support@twitch.tv</div>
         <div className="text-sm">© {new Date().getFullYear()} Twitch Interactive, Inc.</div>
       </footer>
